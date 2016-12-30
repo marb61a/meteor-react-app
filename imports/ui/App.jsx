@@ -22,7 +22,9 @@ export default class App extends Component{
     }
     
     renderPlayers(){
-        
+        return this.state.players.map((player) => {
+            <TeamList key={player._id} player={player} />;
+        });
     }
     
     render(){
