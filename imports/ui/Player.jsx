@@ -24,6 +24,15 @@ export default class Player extends Component{
             <Card>
                 <CardMedia>
                 </CardMedia>
+                <CardText>
+                    <div style={styles.wrapper}>
+                        <chip backgroundColor={blue200} style={styles.chip}>
+                        
+                        </chip>
+                    </div>
+                </CardText>
+                <CardActions>
+                </CardActions>
             </Card>        
         );
     }

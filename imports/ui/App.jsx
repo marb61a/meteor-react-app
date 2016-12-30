@@ -31,7 +31,26 @@ export default class App extends Component{
         return(
             <MuiThemeProvider>
                 <div className="container">
-                
+                    <AppBar 
+                        title="Football App"
+                        iconClassNameRight="muidocs-icon-navigation-expand-more"
+                        showMenuIconButton={false}/>
+                    <div className="row">
+                        <div className="col s12 m7" >
+                            <Player />
+                        </div>
+                        <div className="col s12 m5" >
+                            <h2>Team List</h2>
+                            <divider>
+                                <list>
+                                    {this.renderPlayers()}
+                                </list>
+                            </divider>
+                        </div>
+                        <div className="col s12 m5" >
+                            <TeamStats/>
+                        </div>
+                    </div>
                 </div>
             </MuiThemeProvider>    
         );
