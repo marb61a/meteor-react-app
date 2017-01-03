@@ -22,12 +22,58 @@ export default class Player extends Component{
     render(){
         return(
             <Card>
-                <CardMedia>
+                <CardMedia overlay={<CardTitle title="Emmanuel Henri" subtitle="Offense: 12 - Defense: 8" />}>
+                    <img src="player.jpg" />
                 </CardMedia>
                 <CardText>
                     <div style={styles.wrapper}>
                         <chip backgroundColor={blue200} style={styles.chip}>
-                        
+                            <Avatar size={32} color={blue200} backgroundColor={blue900}>
+                                2
+                            </Avatar>
+                            Ball Maniplulation
+                        </chip>
+                        <chip backgroundColor={blue200} style={styles.chip}>
+                            <Avatar size={32} color={blue200} backgroundColor={blue900}>
+                                2
+                            </Avatar>
+                            Kicking abilities
+                        </chip>
+                        <chip backgroundColor={blue200} style={styles.chip}>
+                            <Avatar size={32} color={blue200} backgroundColor={blue900}>
+                                2
+                            </Avatar>
+                            Passing abilities
+                        </chip>
+                        <chip backgroundColor={blue200} style={styles.chip}>
+                            <Avatar size={32} color={blue200} backgroundColor={blue900}>
+                                2
+                            </Avatar>
+                            Duel/Tackling abilities
+                        </chip>
+                        <chip backgroundColor={blue200} style={styles.chip}>
+                            <Avatar size={32} color={blue200} backgroundColor={blue900}>
+                                2
+                            </Avatar>
+                            Field Speed Coverage
+                        </chip>
+                        <chip backgroundColor={blue200} style={styles.chip}>
+                            <Avatar size={32} color={blue200} backgroundColor={blue900}>
+                                2
+                            </Avatar>
+                            Blocking Abilities
+                        </chip>
+                        <chip backgroundColor={blue200} style={styles.chip}>
+                            <Avatar size={32} color={blue200} backgroundColor={blue900}>
+                                2
+                            </Avatar>
+                            Game Strategy
+                        </chip>
+                        <chip backgroundColor={blue200} style={styles.chip}>
+                            <Avatar size={32} color={blue200} backgroundColor={blue900}>
+                                2
+                            </Avatar>
+                            Playing Risks
                         </chip>
                     </div>
                 </CardText>
