@@ -14,11 +14,49 @@ export default class App extends Component{
         super(props);
         
         // Set up state
-        this.state = {players : []};
+        this.state = {players : [
+        ]};
     }
     
     componentWillMount(){
-        this.setState({});    
+        this.setState({players : [
+        {
+            _id: 1,
+            name: "Manny Henri",
+            ballManipulation: 2,
+            kickingAbilities: 3,
+            passingAbilities: 1,
+            duelTackling: 1,
+            fieldCoverage: 3,
+            blockingAbilities: 2,
+            gameStrategy: 3,
+            playmakingRisks: 2,
+        },
+        {
+            _id: 2,
+            name: "Speedy Gonz",
+            ballManipulation: 2,
+            kickingAbilities: 3,
+            passingAbilities: 1,
+            duelTackling: 1,
+            fieldCoverage: 3,
+            blockingAbilities: 2,
+            gameStrategy: 3,
+            playmakingRisks: 2,
+        },
+        {
+            _id: 3,
+            name: "Tracey Good",
+            ballManipulation: 2,
+            kickingAbilities: 3,
+            passingAbilities: 1,
+            duelTackling: 1,
+            fieldCoverage: 3,
+            blockingAbilities: 2,
+            gameStrategy: 3,
+            playmakingRisks: 2,
+        }    
+        ]});    
     }
     
     renderPlayers(){
