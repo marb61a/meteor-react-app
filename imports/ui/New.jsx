@@ -29,7 +29,7 @@ export default class Example extends Component {
     render(){
         return(
             <div className="row">
-                <form className="col s12">
+                <form className="col s12" onSubmit={this.submitPlayer.bind(this)}>
                     <h3>Add a new player</h3>
                     <div className="row">
                         <div className="input-field col s6">

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 import AppBar from 'material-ui/AppBar';
@@ -36,7 +36,9 @@ export default class App extends Component{
                     <AppBar 
                         title="Football App"
                         iconClassNameRight="muidocs-icon-navigation-expand-more"
-                        showMenuIconButton={false}/>
+                        showMenuIconButton={false}>
+                        <AccountsWrapper />
+                    </AppBar>
                     <div className="row">
                         <div className="col s12 m7" >
                             <Player />
@@ -61,3 +63,19 @@ export default class App extends Component{
         );
     }
 }
+
+App.propTypes = {
+    players: PropTypes.array.isRequired,
+};
+
+export default createContainer(() => {
+    Meteor.subscribe('players');
+    const user = Meteor.userId();
+    
+    return {
+        players : Players.find(
+                { owner: user },
+                {sort: { name: 1}}
+            ).fetch(),
+    };
+}, App);
