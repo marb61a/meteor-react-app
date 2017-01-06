@@ -47,6 +47,28 @@ export default class App extends Component{
         });
     }
     
+    showEditForm(){
+        this.setState({
+            showEditPlayer : false
+        });
+    }
+    
+    showTeamStats(){
+        this.setState({
+            showEditPlayer : false
+        });
+    }
+    
+    showForm(){
+        if (this.state.showEditPlayer === true) {
+            return(
+                <Edit currentPlayer={this.state.currentPlayer} showTeamStats={this.showTeamStats}/>  
+            );
+        } else {
+            return ( <TeamStats />);    
+        }
+    }
+    
     render(){
         return(
             <MuiThemeProvider>
@@ -59,7 +81,7 @@ export default class App extends Component{
                     </AppBar>
                     <div className="row">
                         <div className="col s12 m7" >
-                            <Player />
+                            <Player player={this.state.currentPlayer} />
                         </div>
                         <div className="col s12 m5" >
                             <h2>Team List</h2>
@@ -73,7 +95,7 @@ export default class App extends Component{
                             </divider>
                         </div>
                         <div className="col s12 m5" >
-                            <TeamStats/>
+                            {this.showForm}
                         </div>
                     </div>
                 </div>
