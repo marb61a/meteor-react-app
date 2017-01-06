@@ -14,13 +14,31 @@ import TeamStats from './Team-stats';
 import Player from './Player';
 import AccountsWrapper from './AccountsWrapper';
 
+const tempPlayer = {
+  name: "Temp player",
+  team: "Superstars",
+  ballManipulation: 2,
+  kickingAbilities: 3,
+  passingAbilities: 2,
+  duelTackling: 1,
+  fieldCoverage: 2,
+  blockingAbilities: 0,
+  gameStrategy: 1,
+  playmakingRisks: 2,
+  notes: "This player is only temporary",
+};
+
 export default class App extends Component{
     constructor(props){
         super(props);
         
         // Set up state
-        this.state = {players : [
-        ]};
+        this.state = {
+            currentPlayer : tempPlayer,
+            showEditPlayer : false
+        };
+        
+        this.updateCurrentPlayer = this.updateCurrentPlayer.bind(this);
     }
     
     renderPlayers(){

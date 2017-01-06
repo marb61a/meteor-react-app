@@ -20,9 +20,14 @@ const styles = {
 
 export default class Player extends Component{
     render(){
+        const player = this.props.player;
+        const defense = player.duelTackling + player.fieldCoverage + player.blockingAbilities + player.gameStrategy + player.playmakingRisks;
+        const offense = player.kickingAbilities + player.gameStrategy + player.ballManipulation + player.passingAbilities + player.fieldCoverage + player.playmakingRisks;
+        const total = player.kickingAbilities + player.gameStrategy + player.ballManipulation + player.passingAbilities + player.fieldCoverage + player.playmakingRisks + player.duelTackling + player.blockingAbilities;
+
         return(
             <Card>
-                <CardMedia overlay={<CardTitle title="Emmanuel Henri" subtitle="Offense: 12 - Defense: 8" />}>
+                <CardMedia overlay={<CardTitle title={player.name} subtitle={`Offense: ${offense} - Defense: ${defense} - Total: ${total}`} />}>
                     <img src="player.jpg" />
                 </CardMedia>
                 <CardText>
